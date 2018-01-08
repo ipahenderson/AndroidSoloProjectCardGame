@@ -56,8 +56,7 @@ public enum ImageType {
     TENofCLUBS("@drawable/ten_of_clubs"),
     JACKofCLUBS("@drawable/jack_of_clubs"),
     QUEENofCLUBS("@drawable/queen_of_clubs"),
-    KINGofCLUBS("@drawable/king_of_clubs")
-    ;
+    KINGofCLUBS("@drawable/king_of_clubs");
 
     private final String imageURL;
 

@@ -35,6 +35,16 @@ public class DeckTest {
         assertEquals(52, deck.deckSize());
     }
 
+    @Test
+    public void deckHasImages(){
+        deck.populateDeck();
+        deck.setImages();
+        for (Card card : deck.getCards()){
+            System.out.println(card.prettyName());
+        }
+        assertEquals("@drawable/queen_of_clubs", deck.getCards().get(50).getImage());
+    }
+
 
     @Test
     public void canDealCard(){

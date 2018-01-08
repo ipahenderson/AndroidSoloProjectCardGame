@@ -27,11 +27,10 @@ public class Deck {
         for(SuitType suit : SuitType.values()){
             for(ValueType value : ValueType.values()){
                 cards.add(new Card(suit, value));
-
             }
         }
-
     }
+
 
 
     public Card dealCard() {
@@ -46,7 +45,14 @@ public class Deck {
     public ArrayList<Card> getCards() {
         return cards;
     }
+
+    public void setImages() {
+        for (int i = 0; i < cards.size(); i++) {
+            cards.get(i).setImage(ImageType.values()[i]);
+        }
+    }
 }
+
 
 
 
