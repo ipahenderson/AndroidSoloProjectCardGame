@@ -30,6 +30,7 @@ public class Card {
     }
 
 
+
     public void setImage(ImageType imageEnum){
         this.image = imageEnum.getImageURL();
     }
