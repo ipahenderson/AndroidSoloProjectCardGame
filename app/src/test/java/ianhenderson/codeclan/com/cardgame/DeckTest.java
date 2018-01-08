@@ -29,6 +29,9 @@ public class DeckTest {
     @Test
     public void deckHas52Cards(){
         deck.populateDeck();
+        for (Card card : deck.getCards()){
+            System.out.println(card.prettyName());
+        }
         assertEquals(52, deck.deckSize());
     }
 

@@ -38,6 +38,6 @@ public class Card {
     }
 
     public String prettyName(){
-        return value.toString() + " of " + suit.toString();
+        return value.toString() + "of" + suit.toString()+ ",";
     }
 }

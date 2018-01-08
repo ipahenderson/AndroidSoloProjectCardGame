@@ -21,10 +21,13 @@ public class Deck {
         return this.cards.size();
     }
 
+
+
     public void populateDeck(){
         for(SuitType suit : SuitType.values()){
             for(ValueType value : ValueType.values()){
                 cards.add(new Card(suit, value));
+
             }
         }
 
@@ -39,4 +42,14 @@ public class Deck {
     public void shuffleDeck(){
         Collections.shuffle(cards);
     }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
 }
+
+
+
+
+
+
