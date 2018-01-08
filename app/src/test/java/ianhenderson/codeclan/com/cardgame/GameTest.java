@@ -49,14 +49,14 @@ public class GameTest {
 
     @Test
     public void canRunGame(){
-        game.runGame(game.getPlayers(), deck);
+        game.runGame(deck);
         assertNotNull(game.winner(player1, player2));
     }
 
 
     @Test
     public void canGiveWinner(){
-        game.runGame(game.getPlayers(), deck);
+        game.runGame(deck);
         System.out.println(game.winner(player1, player2).getName());
         assertNotNull(game.winner(player1, player2));
     }

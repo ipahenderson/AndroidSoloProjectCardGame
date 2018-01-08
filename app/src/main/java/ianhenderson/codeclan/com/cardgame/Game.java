@@ -36,13 +36,14 @@ public class Game {
             }
         }
 
-    public void runGame(ArrayList<Player> inputPlayers, Deck inputDeck) {
+    public void runGame(Deck inputDeck) {
         inputDeck.populateDeck();
+        inputDeck.setImages();
         inputDeck.shuffleDeck();
-        inputPlayers.get(0).takeCard(inputDeck.dealCard());
-        inputPlayers.get(0).takeCard(inputDeck.dealCard());
-        inputPlayers.get(1).takeCard(inputDeck.dealCard());
-        inputPlayers.get(1).takeCard(inputDeck.dealCard());
+        this.players.get(0).takeCard(inputDeck.dealCard());
+        this.players.get(0).takeCard(inputDeck.dealCard());
+        this.players.get(1).takeCard(inputDeck.dealCard());
+        this.players.get(1).takeCard(inputDeck.dealCard());
     }
 }
 
