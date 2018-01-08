@@ -24,6 +24,7 @@ public class Deck {
 
 
     public void populateDeck(){
+        cards.clear();
         for(SuitType suit : SuitType.values()){
             for(ValueType value : ValueType.values()){
                 cards.add(new Card(suit, value));
@@ -51,6 +52,7 @@ public class Deck {
             cards.get(i).setImage(ImageType.values()[i]);
         }
     }
+
 }
 
 

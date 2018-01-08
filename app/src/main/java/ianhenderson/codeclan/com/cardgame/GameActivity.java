@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.File;
 
@@ -22,11 +23,15 @@ public class GameActivity extends AppCompatActivity {
     Deck deck;
     Player player1;
     Player player2;
+    TextView player1Name;
+    TextView player2Name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        player1Name = findViewById(R.id.player1_name);
+        player2Name = findViewById(R.id.player2_name);
         player1Card1 = findViewById(R.id.player1_card1);
         player1Card2 = findViewById(R.id.player1_card2);
         player2Card1 = findViewById(R.id.player2_card1);
@@ -41,6 +46,8 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void updateScreen(){
+        player1Name.setText(player1.getName());
+        player2Name.setText(player2.getName());
         String player1Card1Path = player1.getHand().get(0).getImage();
         String player1Card2Path = player1.getHand().get(1).getImage();
         String player2Card1Path = player2.getHand().get(0).getImage();
@@ -56,6 +63,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void onDealButtonClick(View view){
+        player1.getHand().clear();
+        player2.getHand().clear();
         game.runGame(deck);
         updateScreen();
     }
