@@ -3,6 +3,9 @@ package ianhenderson.codeclan.com.cardgame;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+/**
+ * Created by ianhenderson on 08/01/2018.
+ */
 
 public class Deck {
 
