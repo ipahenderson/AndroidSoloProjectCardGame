@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,6 +27,8 @@ public class GameActivity extends AppCompatActivity {
     TextView player1Name;
     TextView player2Name;
     TextView gameResult;
+    ImageAdapter player1CardView;
+    GridView player1CardGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +41,15 @@ public class GameActivity extends AppCompatActivity {
         player2Card1 = findViewById(R.id.player2_card1);
         player2Card2 = findViewById(R.id.player2_card2);
         gameResult = findViewById(R.id.game_result);
+        player1CardGrid = findViewById(R.id.player1_card_panel);
         deck = new Deck();
         player1 = new Player("Jardine");
         player2 = new Player("Matt");
         game = new Game();
         game.addPlayer(player1);
         game.addPlayer(player2);
+        player1CardView = new ImageAdapter(this, game);
+        player1CardGrid.setAdapter(player1CardView);
     }
 
 
@@ -62,7 +68,8 @@ public class GameActivity extends AppCompatActivity {
         player1Card2.setImageResource(res2);
         player2Card1.setImageResource(res3);
         player2Card2.setImageResource(res4);
-        
+//        player1CardGrid.setAdapter(player1CardView);
+
     }
 
     public void onDealButtonClick(View view){
