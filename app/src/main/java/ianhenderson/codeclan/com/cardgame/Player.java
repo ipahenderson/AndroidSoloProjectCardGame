@@ -32,8 +32,14 @@ public class Player {
 
     public int getHandTotal(){
         int total = 0;
-        for (Card card : hand){
-            total += card.getRealValue();
+        for (Card card : hand) {
+            if (card.getValue().equals(ValueType.ACE) && total < 21) {
+                total += card.getRealValue();
+                total+= 10;
+            }
+            else{
+                total += card.getRealValue();
+            }
         }
         return total;
         }

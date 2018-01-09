@@ -30,8 +30,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="133dp"
-        android:layout_height="273dp"
+        android:layout_width="192dp"
+        android:layout_height="381dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.359"
         app:srcCompat="@drawable/welcome_image2" />
 
     <TextView

@@ -49,10 +49,18 @@ public class Game {
     public String prettyScore(){
         Player player1 = players.get(0);
         Player player2 = players.get(1);
-        return winner(player1, player2).getName() + " wins with: \n" +
-                winner(player1, player2).getHand().get(0).prettyName() +
-                " & " + winner(player1, player2).getHand().get(1).prettyName() +
-                " (Points: " + winner(player1, player2).getHandTotal() + ")";
+        Player gameWinner = winner(player1, player2);
+
+        if (gameWinner.getHandTotal() == 21 && gameWinner.getHand().size() == 2){
+            return gameWinner.getName() + " wins with: \n" + "BLACKJACK! " +
+                    " (Points: " + gameWinner.getHandTotal() + ")";
+        }
+        else {
+            return gameWinner.getName() + " wins with: \n" +
+                    gameWinner.getHand().get(0).prettyName() +
+                    " & " + gameWinner.getHand().get(1).prettyName() +
+                    " (Points: " + gameWinner.getHandTotal() + ")";
+        }
     }
 }
 
