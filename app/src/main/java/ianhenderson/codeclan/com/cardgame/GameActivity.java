@@ -25,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     Player player2;
     TextView player1Name;
     TextView player2Name;
+    TextView gameResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
         player1Card2 = findViewById(R.id.player1_card2);
         player2Card1 = findViewById(R.id.player2_card1);
         player2Card2 = findViewById(R.id.player2_card2);
+        gameResult = findViewById(R.id.game_result);
         deck = new Deck();
         player1 = new Player("Jardine");
         player2 = new Player("Matt");
@@ -45,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    public void updateScreen(){
+    public void updateScreen() {
         player1Name.setText(player1.getName());
         player2Name.setText(player2.getName());
         String player1Card1Path = player1.getHand().get(0).getImage();
@@ -66,6 +68,7 @@ public class GameActivity extends AppCompatActivity {
         player1.getHand().clear();
         player2.getHand().clear();
         game.runGame(deck);
+        gameResult.setText(game.prettyScore());
         updateScreen();
     }
 

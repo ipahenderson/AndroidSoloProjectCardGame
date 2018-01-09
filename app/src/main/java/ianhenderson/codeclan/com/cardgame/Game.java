@@ -45,6 +45,15 @@ public class Game {
         this.players.get(1).takeCard(inputDeck.dealCard());
         this.players.get(1).takeCard(inputDeck.dealCard());
     }
+
+    public String prettyScore(){
+        Player player1 = players.get(0);
+        Player player2 = players.get(1);
+        return winner(player1, player2).getName() + " wins with: \n" +
+                winner(player1, player2).getHand().get(0).prettyName() +
+                " & " + winner(player1, player2).getHand().get(1).prettyName() +
+                " (Points: " + winner(player1, player2).getHandTotal() + ")";
+    }
 }
 
 
