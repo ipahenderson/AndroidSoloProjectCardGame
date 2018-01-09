@@ -61,7 +61,7 @@ public class ImageAdapter extends BaseAdapter{
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (view == null){
             view = inflater.inflate(R.layout.card_view, viewGroup, false);
-            imageView = (ImageView) view.findViewById(R.id.player1_card_panel);
+            imageView = view.findViewById(R.id.card_view);
         }
         else{
             imageView = (ImageView) view;

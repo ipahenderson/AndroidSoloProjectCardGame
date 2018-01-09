@@ -54,21 +54,21 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void updateScreen() {
-        player1Name.setText(player1.getName());
-        player2Name.setText(player2.getName());
-        String player1Card1Path = player1.getHand().get(0).getImage();
-        String player1Card2Path = player1.getHand().get(1).getImage();
-        String player2Card1Path = player2.getHand().get(0).getImage();
-        String player2Card2Path = player2.getHand().get(1).getImage();
-        int res1 = getResources().getIdentifier(player1Card1Path, "drawable", this.getPackageName());
-        int res2 = getResources().getIdentifier(player1Card2Path, "drawable", this.getPackageName());
-        int res3 = getResources().getIdentifier(player2Card1Path, "drawable", this.getPackageName());
-        int res4 = getResources().getIdentifier(player2Card2Path, "drawable", this.getPackageName());
-        player1Card1.setImageResource(res1);
-        player1Card2.setImageResource(res2);
-        player2Card1.setImageResource(res3);
-        player2Card2.setImageResource(res4);
-//        player1CardGrid.setAdapter(player1CardView);
+//        player1Name.setText(player1.getName());
+//        player2Name.setText(player2.getName());
+//        String player1Card1Path = player1.getHand().get(0).getImage();
+//        String player1Card2Path = player1.getHand().get(1).getImage();
+//        String player2Card1Path = player2.getHand().get(0).getImage();
+//        String player2Card2Path = player2.getHand().get(1).getImage();
+//        int res1 = getResources().getIdentifier(player1Card1Path, "drawable", this.getPackageName());
+//        int res2 = getResources().getIdentifier(player1Card2Path, "drawable", this.getPackageName());
+//        int res3 = getResources().getIdentifier(player2Card1Path, "drawable", this.getPackageName());
+//        int res4 = getResources().getIdentifier(player2Card2Path, "drawable", this.getPackageName());
+//        player1Card1.setImageResource(res1);
+//        player1Card2.setImageResource(res2);
+//        player2Card1.setImageResource(res3);
+//        player2Card2.setImageResource(res4);
+        player1CardGrid.setAdapter(player1CardView);
 
     }
 
