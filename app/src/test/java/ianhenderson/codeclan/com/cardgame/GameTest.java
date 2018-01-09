@@ -18,6 +18,8 @@ public class GameTest {
     Player player1;
     Player player2;
     Deck deck;
+    Card card1;
+    Card card2;
 
 
     @Before
@@ -26,6 +28,9 @@ public class GameTest {
         player1 = new Player("Matt");
         player2 = new Player("Jardine");
         deck = new Deck();
+        card1 = new Card(SuitType.SPADES, ValueType.ACE);
+        card2 = new Card(SuitType.SPADES, ValueType.JACK);
+
         game.addPlayer(player1);
         game.addPlayer(player2);
     }
@@ -61,5 +66,15 @@ public class GameTest {
         assertNotNull(game.winner(player1, player2));
     }
 
+    @Test
+    public void canDrawWithBlackJack(){
+        deck.populateDeck();
+        deck.shuffleDeck();
+        player1.takeCard(card1);
+        player1.takeCard(card2);
+        player2.takeCard(card1);
+        player2.takeCard(card2);
+        assertEquals("It's a draw, both players have BLACKJACK!", game.prettyScore());
+    }
 
 }
