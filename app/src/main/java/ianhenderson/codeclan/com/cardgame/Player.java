@@ -45,5 +45,9 @@ public class Player {
         }
 
 
+    public boolean playerHasMoreCards(){
+        return hand.size() > 2;
+    }
+
 }
 

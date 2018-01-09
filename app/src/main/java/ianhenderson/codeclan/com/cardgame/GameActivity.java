@@ -62,6 +62,7 @@ public class GameActivity extends AppCompatActivity {
         player1Card2.setImageResource(res2);
         player2Card1.setImageResource(res3);
         player2Card2.setImageResource(res4);
+        
     }
 
     public void onDealButtonClick(View view){
