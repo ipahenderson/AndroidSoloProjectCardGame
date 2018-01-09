@@ -76,5 +76,16 @@ public class GameTest {
         player2.takeCard(card2);
         assertEquals("It's a draw, both players have BLACKJACK!", game.prettyScore());
     }
+    @Test
+    public void canDrawWithTwoCardScore(){
+        deck.populateDeck();
+        deck.shuffleDeck();
+        player1.takeCard(card2);
+        player1.takeCard(card2);
+        player2.takeCard(card2);
+        player2.takeCard(card2);
+        assertEquals("It's a draw, both players have " + player1.getHandTotal() + " points!", game.prettyScore());
+    }
 
 }
+

@@ -54,6 +54,12 @@ public class Game {
         if (player1.getHandTotal() == 21 && player2.getHandTotal() == 21){
             return "It's a draw, both players have BLACKJACK!";
         }
+        else if ((player1.getHandTotal() == player2.getHandTotal() &&
+                (player1.getHand().size() == 2) == (player2.getHand().size() == 2))
+                && player1.getHandTotal() == 20)
+        {
+            return "It's a draw, both players have " + player1.getHandTotal() + " points!";
+        }
         else if (gameWinner.getHandTotal() == 21 && gameWinner.getHand().size() == 2){
             return gameWinner.getName() + " wins with: \n" + "BLACKJACK! " +
                     " (Points: " + gameWinner.getHandTotal() + ")";

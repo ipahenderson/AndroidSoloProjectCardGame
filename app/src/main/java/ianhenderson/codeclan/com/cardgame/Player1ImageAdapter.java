@@ -15,12 +15,12 @@ import java.util.ArrayList;
 
 
 
-public class ImageAdapter extends BaseAdapter{
+public class Player1ImageAdapter extends BaseAdapter{
 
     private Context mContext;
     private Game game;
 
-    public ImageAdapter(Context mContext, Game game) {
+    public Player1ImageAdapter(Context mContext, Game game) {
         this.mContext = mContext;
         this.game = game;
     }
