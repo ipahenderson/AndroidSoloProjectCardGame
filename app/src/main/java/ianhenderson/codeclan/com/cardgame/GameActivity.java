@@ -32,7 +32,6 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        player1Name = findViewById(R.id.player1_name);
         player2Name = findViewById(R.id.player2_name);
         gameResult = findViewById(R.id.game_result);
         player1CardGrid = findViewById(R.id.player1_card_panel);
@@ -51,7 +50,6 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void updateScreen() {
-        player1Name.setText(player1.getName());
         player2Name.setText(player2.getName());
         player1CardGrid.setAdapter(player1CardView);
         player2CardGrid.setAdapter(player2CardView);

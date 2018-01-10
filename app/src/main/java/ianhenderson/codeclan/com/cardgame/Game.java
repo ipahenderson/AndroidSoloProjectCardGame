@@ -62,13 +62,13 @@ public class Game {
         }
         else if (gameWinner.getHandTotal() == 21 && gameWinner.getHand().size() == 2){
             return gameWinner.getName() + " wins with: \n" + "BLACKJACK! " +
-                    " (Points: " + gameWinner.getHandTotal() + ")";
+                    "\n (Points: " + gameWinner.getHandTotal() + ")";
         }
         else{
             return gameWinner.getName() + " wins with: \n" +
                     gameWinner.getHand().get(0).prettyName() +
                     " & " + gameWinner.getHand().get(1).prettyName() +
-                    " (Points: " + gameWinner.getHandTotal() + ")";
+                    "\n (Points: " + gameWinner.getHandTotal() + ")";
         }
     }
 }
