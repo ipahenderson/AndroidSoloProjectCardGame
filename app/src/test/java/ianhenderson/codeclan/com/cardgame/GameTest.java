@@ -54,14 +54,16 @@ public class GameTest {
 
     @Test
     public void canRunGame(){
-        game.runGame(deck);
+        game.setUpDeck();
+        game.runGame();
         assertNotNull(game.winner(player1, player2));
     }
 
 
     @Test
     public void canGiveWinner(){
-        game.runGame(deck);
+        game.setUpDeck();
+        game.runGame();
         System.out.println(game.winner(player1, player2).getName());
         assertNotNull(game.winner(player1, player2));
     }
@@ -86,6 +88,9 @@ public class GameTest {
         player2.takeCard(card2);
         assertEquals("It's a draw, both players have " + player1.getHandTotal() + " points!", game.prettyScore());
     }
+
+
+
 
 }
 

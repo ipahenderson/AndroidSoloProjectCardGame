@@ -10,22 +10,20 @@ import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
 
-    ImageView player1Card1;
-    ImageView player1Card2;
-    ImageView player2Card1;
-    ImageView player2Card2;
+
     ImageButton dealButton;
     Game game;
     Deck deck;
     Player player1;
     Player player2;
-    TextView player1Name;
     TextView player2Name;
     TextView gameResult;
     Player1ImageAdapter player1CardView;
     GridView player1CardGrid;
     Player2ImageAdapter player2CardView;
     GridView player2CardGrid;
+    TextView player1Points;
+    TextView player2Points;
 
 
     @Override
@@ -36,33 +34,54 @@ public class GameActivity extends AppCompatActivity {
         gameResult = findViewById(R.id.game_result);
         player1CardGrid = findViewById(R.id.player1_card_panel);
         player2CardGrid = findViewById(R.id.player2_card_panel);
+        player1Points = findViewById(R.id.player1_points);
+        player2Points = findViewById(R.id.player2_points);
         deck = new Deck();
-        player1 = new Player("Jardine");
+        player1 = new Player("Dealer");
         player2 = new Player("Matt");
         game = new Game();
         game.addPlayer(player1);
         game.addPlayer(player2);
+        game.setUpDeck();
         player1CardView = new Player1ImageAdapter(this, game);
         player1CardGrid.setAdapter(player1CardView);
         player2CardView = new Player2ImageAdapter(this, game);
         player2CardGrid.setAdapter(player2CardView);
+        player2Name.setText(player2.getName());
+
+
     }
 
 
     public void updateScreen() {
-        player2Name.setText(player2.getName());
         player1CardGrid.setAdapter(player1CardView);
         player2CardGrid.setAdapter(player2CardView);
+        player1Points.setText("Points: " + player1.getHandTotal());
+        player2Points.setText("Points: " + player2.getHandTotal());
 
+
+    }
+
+    public void presentWinner(){
+        gameResult.setText(game.prettyScore());
     }
 
     public void onDealButtonClick(View view){
+        game.freshDeck();
         player1.getHand().clear();
         player2.getHand().clear();
-        game.runGame(deck);
-        gameResult.setText(game.prettyScore());
+        game.runGame();
+        presentWinner();
         updateScreen();
     }
+
+    public void onHitButtonClick(View view){
+        game.playerHit();
+        updateScreen();
+    }
+
+
+
 
 
 }

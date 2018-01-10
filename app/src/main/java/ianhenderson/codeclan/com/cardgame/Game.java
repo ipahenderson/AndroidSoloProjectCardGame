@@ -36,14 +36,18 @@ public class Game {
             }
         }
 
-    public void runGame(Deck inputDeck) {
-        inputDeck.populateDeck();
-        inputDeck.setImages();
-        inputDeck.shuffleDeck();
-        this.players.get(0).takeCard(inputDeck.dealCard());
-        this.players.get(0).takeCard(inputDeck.dealCard());
-        this.players.get(1).takeCard(inputDeck.dealCard());
-        this.players.get(1).takeCard(inputDeck.dealCard());
+
+    public void setUpDeck(){
+        deck.populateDeck();
+        deck.setImages();
+        deck.shuffleDeck();
+    }
+
+    public void runGame() {
+        this.players.get(0).takeCard(deck.dealCard());
+        this.players.get(0).takeCard(deck.dealCard());
+        this.players.get(1).takeCard(deck.dealCard());
+        this.players.get(1).takeCard(deck.dealCard());
     }
 
     public String prettyScore(){
@@ -69,6 +73,22 @@ public class Game {
                     gameWinner.getHand().get(0).prettyName() +
                     " & " + gameWinner.getHand().get(1).prettyName() +
                     "\n (Points: " + gameWinner.getHandTotal() + ")";
+        }
+    }
+
+    public void playerHit(){
+        Player player1 = players.get(0);
+        Player player2 = players.get(1);
+        player2.takeCard(deck.dealCard());
+
+        if (player1.getHandTotal() <= 16){
+            player1.takeCard(deck.dealCard());
+        }
+    }
+
+    public void freshDeck(){
+        if (deck.deckSize() < 52){
+            setUpDeck();
         }
     }
 }
