@@ -39,8 +39,9 @@ public class GameActivity extends AppCompatActivity {
         player2Points = findViewById(R.id.player2_points);
         instructionsView = findViewById(R.id.instructions_view);
         deck = new Deck();
+        String playerName = getIntent().getStringExtra("name");
         player1 = new Player("Dealer");
-        player2 = new Player("Matt");
+        player2 = new Player(playerName);
         game = new Game();
         game.addPlayer(player1);
         game.addPlayer(player2);
@@ -70,6 +71,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void onDealButtonClick(View view){
         instructionsView.setVisibility(View.GONE);
+        gameResult.setText(" ");
         game.freshDeck();
         player1.getHand().clear();
         player2.getHand().clear();
@@ -87,6 +89,7 @@ public class GameActivity extends AppCompatActivity {
     public void onStickButtonClick(View view){
         game.computerHit();
         presentWinner();
+        updateScreen();
     }
 
 

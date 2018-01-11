@@ -76,8 +76,7 @@ public class Game {
         }
         else{
             return gameWinner.getName() + " wins with: \n" +
-                    gameWinner.getHand().get(0).prettyName() +
-                    " & " + gameWinner.getHand().get(1).prettyName() +
+                    gameWinner.playerHandPrint() +
                     "\n (Points: " + gameWinner.getHandTotal() + ")";
         }
     }
@@ -94,7 +93,8 @@ public class Game {
 
     public void computerHit(){
         Player computer = players.get(0);
-        if (computer.getHandTotal() <= 16) {
+        Player player = players.get(1);
+        if (computer.getHandTotal() <= 16 && player.getHandTotal() <= 21) {
             computer.takeCard(deck.dealCard());
         }
     }

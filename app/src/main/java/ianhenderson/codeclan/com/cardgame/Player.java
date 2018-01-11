@@ -54,5 +54,13 @@ public class Player {
         return hand.size() > 2;
     }
 
+    public String playerHandPrint(){
+        String prettyPrint = "";
+        for (Card card : hand){
+            prettyPrint += card.prettyName() + ", ";
+        }
+        return prettyPrint.substring(0, prettyPrint.length() - 2);
+    }
+
 }
 

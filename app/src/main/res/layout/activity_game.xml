@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/felt"
     tools:context="ianhenderson.codeclan.com.cardgame.GameActivity">
+    
 
 
     <ImageButton
@@ -30,7 +31,7 @@
 
     <TextView
         android:id="@+id/game_result"
-        android:layout_width="383dp"
+        android:layout_width="391dp"
         android:layout_height="62dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -41,10 +42,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <TextView
         android:id="@+id/player2_name"
@@ -85,7 +86,8 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:rotation="180"/>
 
 
     <GridView
@@ -116,9 +118,9 @@
         android:id="@+id/imageView"
         android:layout_width="59dp"
         android:layout_height="59dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player1_card_panel"
         app:srcCompat="@drawable/dealerchip" />
 
@@ -126,12 +128,12 @@
         android:id="@+id/player1_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/wendy_one"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
