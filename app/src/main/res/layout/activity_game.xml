@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/felt"
     tools:context="ianhenderson.codeclan.com.cardgame.GameActivity">
-    
 
 
     <ImageButton
@@ -56,7 +55,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/wendy_one"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/player2_card_panel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.062"
@@ -77,6 +76,7 @@
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:numColumns="auto_fit"
+        android:rotation="180"
         android:scrollbars="horizontal"
         android:stretchMode="spacingWidthUniform"
         android:textAlignment="center"
@@ -86,8 +86,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:rotation="180"/>
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <GridView
@@ -152,16 +151,19 @@
         android:id="@+id/imageButton2"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="onHitButtonClick"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toEndOf="@+id/deal_button"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintVertical_bias="0.005"
         app:srcCompat="@drawable/playbutton" />
 
     <ImageButton
@@ -179,7 +181,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toEndOf="@+id/deal_button"
-        app:layout_constraintTop_toBottomOf="@+id/player1_card_panel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67"
         app:srcCompat="@drawable/stickbutton" />
 
     <TextView
@@ -211,27 +214,30 @@
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.531" />
 
     <TextView
         android:id="@+id/instructions_view"
         android:layout_width="137dp"
-        android:layout_height="119dp"
+        android:layout_height="84dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="152dp"
         android:fontFamily="@font/wendy_one"
-        android:text="Tap the deck of cards to deal a new game -->"
+        android:text="TAP DECK TO DEAL"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/player2_card_panel"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/deal_button"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 
 
 </android.support.constraint.ConstraintLayout>

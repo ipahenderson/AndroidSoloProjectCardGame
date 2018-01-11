@@ -94,8 +94,10 @@ public class Game {
     public void computerHit(){
         Player computer = players.get(0);
         Player player = players.get(1);
-        if (computer.getHandTotal() <= 16 && player.getHandTotal() <= 21) {
-            computer.takeCard(deck.dealCard());
+        while (computer.getHandTotal() <=16) {
+            if (computer.getHandTotal() <= 16 && player.getHandTotal() <= 21) {
+                computer.takeCard(deck.dealCard());
+            }
         }
     }
 
