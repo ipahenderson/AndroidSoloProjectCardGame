@@ -68,6 +68,9 @@ public class Game {
             return gameWinner.getName() + " wins with: \n" + "BLACKJACK! " +
                     "\n (Points: " + gameWinner.getHandTotal() + ")";
         }
+        else if (gameWinner.getHandTotal() > 21){
+            return gameWinner.getName() + " is bust!";
+        }
         else{
             return gameWinner.getName() + " wins with: \n" +
                     gameWinner.getHand().get(0).prettyName() +
