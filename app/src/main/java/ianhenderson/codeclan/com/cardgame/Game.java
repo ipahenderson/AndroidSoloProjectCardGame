@@ -68,8 +68,11 @@ public class Game {
             return gameWinner.getName() + " wins with: \n" + "BLACKJACK! " +
                     "\n (Points: " + gameWinner.getHandTotal() + ")";
         }
-        else if (gameWinner.getHandTotal() > 21){
-            return gameWinner.getName() + " is bust!";
+        else if (player1.getHandTotal() > 21){
+            return player1.getName() + " is bust!";
+        }
+        else if (player2.getHandTotal() > 21){
+            return player2.getName() + " is bust!";
         }
         else{
             return gameWinner.getName() + " wins with: \n" +
@@ -86,6 +89,13 @@ public class Game {
 
         if (player1.getHandTotal() <= 16){
             player1.takeCard(deck.dealCard());
+        }
+    }
+
+    public void computerHit(){
+        Player computer = players.get(0);
+        if (computer.getHandTotal() <= 16) {
+            computer.takeCard(deck.dealCard());
         }
     }
 

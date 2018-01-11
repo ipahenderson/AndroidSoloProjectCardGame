@@ -24,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     GridView player2CardGrid;
     TextView player1Points;
     TextView player2Points;
+    TextView instructionsView;
 
 
     @Override
@@ -36,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
         player2CardGrid = findViewById(R.id.player2_card_panel);
         player1Points = findViewById(R.id.player1_points);
         player2Points = findViewById(R.id.player2_points);
+        instructionsView = findViewById(R.id.instructions_view);
         deck = new Deck();
         player1 = new Player("Dealer");
         player2 = new Player("Matt");
@@ -67,12 +69,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void onDealButtonClick(View view){
+        instructionsView.setVisibility(View.GONE);
         game.freshDeck();
         player1.getHand().clear();
         player2.getHand().clear();
         game.runGame();
-        presentWinner();
         updateScreen();
+
     }
 
     public void onHitButtonClick(View view){
@@ -81,6 +84,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    public void onStickButtonClick(View view){
+        game.computerHit();
+        presentWinner();
+    }
 
 
 
